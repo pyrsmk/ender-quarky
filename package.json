@@ -1,11 +1,11 @@
 {
     "name": "quarky",
-    "description": "A tiny DOM utility",
+    "description": "A tiny DOM utility for ender",
     "version": "0.2.0",
     "author": "Aurélien Delogu <pyrsmk@dreamysource.fr> (http://dreamysource.fr)",
     "repository": {
         "type": "git",
-        "url": "https://github.com/pyrsmk/quarky.git"
+        "url": "https://github.com/pyrsmk/ender-quarky.git"
     },
     "main": "src/quarky.js",
     "ender": "src/quarky.js",
@@ -16,7 +16,7 @@
     ],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/pyrsmk/quarky/issues",
+		"url": "https://github.com/pyrsmk/ender-quarky/issues",
 		"email": "dev@dreamysource.fr"
 	},
 	"homepage": "http://dreamysource.fr/product/quarky",

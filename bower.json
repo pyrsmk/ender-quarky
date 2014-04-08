@@ -5,7 +5,7 @@
   "main": "src/quarky.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/pyrsmk/quarky.git"
+    "url": "git://github.com/pyrsmk/ender-quarky.git"
   },
   "keywords": [
     "dom",
@@ -16,7 +16,7 @@
   "license": "MIT",
   "homepage": "http://dreamysource.fr/product/quarky",
   "bugs": {
-    "url": "https://github.com/pyrsmk/quarky/issues",
+    "url": "https://github.com/pyrsmk/ender-quarky/issues",
     "email": "dev@dreamysource.fr"
   }
 }
