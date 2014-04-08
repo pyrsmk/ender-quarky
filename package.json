@@ -1,0 +1,29 @@
+{
+    "name": "quarky",
+    "description": "A tiny DOM utility",
+    "version": "0.2.0",
+    "author": "Aurélien Delogu <pyrsmk@dreamysource.fr> (http://dreamysource.fr)",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pyrsmk/quarky.git"
+    },
+    "main": "src/quarky.js",
+    "ender": "src/quarky.js",
+    "keywords": [
+	    "dom",
+	    "utility",
+	    "ender"
+    ],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/pyrsmk/quarky/issues",
+		"email": "dev@dreamysource.fr"
+	},
+	"homepage": "http://dreamysource.fr/product/quarky",
+	"devDependencies": {
+		"grunt": "~0.4.4",
+		"grunt-contrib-clean": "~0.5.0",
+		"grunt-contrib-jshint": "~0.9.2",
+		"grunt-contrib-uglify": "~0.4.0"
+	}
+}
