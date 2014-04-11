@@ -111,7 +111,7 @@
 					}
 					return el.style[name];
 				};
-			if(typeof name=='String'){
+			if(typeof name=='string'){
 				// Get a CSS property
 				if(value===undefined){
 					return getStyle(this[0],name);
@@ -206,7 +206,7 @@
 		*/
 		attr:function(name,value){
 			var i,j,k;
-			if(typeof name=='String'){
+			if(typeof name=='string'){
 				// Get an attribute
 				if(value===undefined){
 					return this[0].getAttribute(name);
@@ -313,7 +313,7 @@
 				Object
 		*/
 		append:function(node){
-			if(typeof node=='String'){
+			if(typeof node=='string'){
 				node=$(node);
 			}
 			this[0].appendChild(node[0]);
@@ -330,7 +330,7 @@
 				Object
 		*/
 		prepend:function(node){
-			if(typeof node=='String'){
+			if(typeof node=='string'){
 				node=$(node);
 			}
 			this[0].insertBefore(node[0],this.children()[0]);
@@ -347,7 +347,7 @@
 				Object
 		*/
 		before:function(node){
-			if(typeof node=='String'){
+			if(typeof node=='string'){
 				node=$(node);
 			}
 			this.parent().insertBefore(node[0],this[0]);
