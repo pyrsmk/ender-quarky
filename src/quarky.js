@@ -8,7 +8,13 @@
 (function(){
 
 	var html=document.documentElement,
-		body=document.body;
+		body=document.body,
+		scrollElement=function(){
+			body.scrollTop=1;
+			var el=(body.scrollTop==1?body:html);
+			body.scrollTop=0;
+			return el;
+		}();
 
 	/*
 		Create a node from HTML code
@@ -105,7 +111,7 @@
 					}
 					return el.style[name];
 				};
-			if(typeof name=='string'){
+			if(typeof name=='String'){
 				// Get a CSS property
 				if(value===undefined){
 					return getStyle(this[0],name);
@@ -200,7 +206,7 @@
 		*/
 		attr:function(name,value){
 			var i,j,k;
-			if(typeof name=='string'){
+			if(typeof name=='String'){
 				// Get an attribute
 				if(value===undefined){
 					return this[0].getAttribute(name);
@@ -242,7 +248,7 @@
 					attributes=this[0].attributes;
 				for(i in attributes){
 					if(i.test(/^data-/)){
-						values[i.substring(5)]=attributes[i];
+						values[i.subString(5)]=attributes[i];
 					}
 				}
 				return values;
@@ -307,7 +313,7 @@
 				Object
 		*/
 		append:function(node){
-			if(typeof node=='string'){
+			if(typeof node=='String'){
 				node=$(node);
 			}
 			this[0].appendChild(node[0]);
@@ -324,7 +330,7 @@
 				Object
 		*/
 		prepend:function(node){
-			if(typeof node=='string'){
+			if(typeof node=='String'){
 				node=$(node);
 			}
 			this[0].insertBefore(node[0],this.children()[0]);
@@ -341,7 +347,7 @@
 				Object
 		*/
 		before:function(node){
-			if(typeof node=='string'){
+			if(typeof node=='String'){
 				node=$(node);
 			}
 			this.parent().insertBefore(node[0],this[0]);
@@ -430,14 +436,14 @@
 			Add a class to the current node
 
 			Parameters
-				string clss
+				String cls
 
 			Return
 				Object
 		*/
-		addClass:function(clss){
+		addClass:function(cls){
 			for(var i=0,j=this.length;i<j;++i){
-				this[i].className+=' '+clss;
+				this[i].className+=' '+cls;
 			}
 			return this;
 		},
@@ -446,14 +452,14 @@
 			Remove a class from the current node
 
 			Parameters
-				string clss
+				String cls
 
 			Return
 				Object
 		*/
-		removeClass:function(clss){
+		removeClass:function(cls){
 			for(var i=0,j=this.length;i<j;++i){
-				this[i].className=this[i].className.replace(new RegExp('\\b ?'+clss+'\\b'),'');
+				this[i].className=this[i].className.replace(new RegExp('\\b ?'+cls+'\\b'),'');
 			}
 			return this;
 		},
@@ -462,13 +468,13 @@
 			Test if a class exists
 
 			Parameters
-				string clss
+				String cls
 
 			Return
 				Boolean
 		*/
-		hasClass:function(clss){
-			var re=new RegExp('\\b'+clss+'\\b');
+		hasClass:function(cls){
+			var re=new RegExp('\\b'+cls+'\\b');
 			return re.test(this[0].className);
 		},
 
@@ -476,7 +482,7 @@
 			Return width
 
 			Return
-				Integer
+				Number
 		*/
 		width:function(){
 			if(this[0]===window){
@@ -494,7 +500,7 @@
 			Return height
 
 			Return
-				Integer
+				Number
 		*/
 		height:function(){
 			if(this[0]===window){
@@ -512,7 +518,7 @@
 			Return top offset
 
 			Return
-				Integer
+				Number
 		*/
 		top:function(){
 			return this[0].getBoundingClientRect().top+$('body')[0].scrollTop;
@@ -522,7 +528,7 @@
 			Return left offset
 
 			Return
-				Integer
+				Number
 		*/
 		left:function(){
 			return this[0].getBoundingClientRect().left+$('body')[0].scrollLeft;
@@ -542,7 +548,7 @@
 			Add a listener
 
 			Parameters
-				string event
+				String event
 				Function func
 
 			Return
@@ -572,6 +578,66 @@
 				}
 			}
 			return this;
+		},
+
+		/*
+			Set/get scrollTop
+
+			Parameters
+				Number value
+
+			Return
+				Number, Object
+		*/
+		scrollTop:function(value){
+			if(this[0]===window || this[0]===document || this[0]===html || this[0]===body){
+				if(value!==undefined){
+					scrollElement.scrollTop=value;
+					return this;
+				}
+				else{
+					return scrollElement.scrollTop;
+				}
+			}
+			else{
+				if(value!==undefined){
+					this[0].scrollTop=value;
+					return this;
+				}
+				else{
+					return this[0].scrollTop;
+				}
+			}
+		},
+
+		/*
+			Set/get scrollLeft
+
+			Parameters
+				Number value
+
+			Return
+				Number, Object
+		*/
+		scrollLeft:function(value){
+			if(this[0]===window || this[0]===document || this[0]===html || this[0]===body){
+				if(value!==undefined){
+					scrollElement.scrollLeft=value;
+					return this;
+				}
+				else{
+					return scrollElement.scrollLeft;
+				}
+			}
+			else{
+				if(value!==undefined){
+					this[0].scrollLeft=value;
+					return this;
+				}
+				else{
+					return this[0].scrollLeft;
+				}
+			}
 		}
 
 	},true);

@@ -1,5 +1,5 @@
-ender-quarky 0.2.1
-==================
+Quarky 0.3.0
+============
 
 Quarky is a DOM utility designed to work with [ender](http://ender.jit.su). It aims to be small and only handle common node tasks.
 
@@ -40,6 +40,10 @@ Here's the complete API:
 - height() : get the height
 - top() : get the top offset
 - left() : get the left offset
+- scrollTop() : get the scrollTop property
+- scrollTop(value) : set the scrollTop property
+- scrollLeft() : get the scrollLeft property
+- scrollLeft(value) : set the scrollLeft property
 - clone() : clone the node
 - on(event,callback) : add one or a list of events (like `change mouseout click`); return true to propagate the event
 
