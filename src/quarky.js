@@ -245,10 +245,11 @@
 			// Get the data list
 			if(name===undefined){
 				var values={},
-					attributes=this[0].attributes;
-				for(i in attributes){
-					if(i.test(/^data-/)){
-						values[i.subString(5)]=attributes[i];
+					attributes=this[0].attributes,
+					i,j;
+				for(i=0,j=attributes.length;i<j;++i){
+					if(/^data-/i.test(attributes[i].name)){
+						values[attributes[i].name.substring(5)]=attributes[i].value;
 					}
 				}
 				return values;
