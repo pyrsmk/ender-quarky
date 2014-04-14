@@ -1,7 +1,7 @@
 {
     "name": "quarky",
     "description": "A tiny DOM utility for ender",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "author": "Aurélien Delogu <pyrsmk@dreamysource.fr> (http://dreamysource.fr)",
     "repository": {
         "type": "git",

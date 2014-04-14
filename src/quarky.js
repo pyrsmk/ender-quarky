@@ -510,7 +510,7 @@
 				return Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight);
 			}
 			else{
-				return this[0].offsetWidth;
+				return this[0].offsetHeight;
 			}
 		},
 
