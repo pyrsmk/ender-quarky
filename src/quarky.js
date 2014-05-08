@@ -14,7 +14,7 @@
 			var el=(body.scrollTop==1?body:html);
 			body.scrollTop=0;
 			return el;
-		}();
+		};
 
 	/*
 		Create a node from HTML code
@@ -593,11 +593,11 @@
 		scrollTop:function(value){
 			if(this[0]===window || this[0]===document || this[0]===html || this[0]===body){
 				if(value!==undefined){
-					scrollElement.scrollTop=value;
+					scrollElement().scrollTop=value;
 					return this;
 				}
 				else{
-					return scrollElement.scrollTop;
+					return scrollElement().scrollTop;
 				}
 			}
 			else{
@@ -623,11 +623,11 @@
 		scrollLeft:function(value){
 			if(this[0]===window || this[0]===document || this[0]===html || this[0]===body){
 				if(value!==undefined){
-					scrollElement.scrollLeft=value;
+					scrollElement().scrollLeft=value;
 					return this;
 				}
 				else{
-					return scrollElement.scrollLeft;
+					return scrollElement().scrollLeft;
 				}
 			}
 			else{
