@@ -376,15 +376,11 @@
 
 		/*
 			Remove the current node
-
-			Return
-				Object
 		*/
 		remove:function(){
 			for(var i=0,j=this.length;i<j;++i){
 				$(this[i]).parent()[0].removeChild(this[i]);
 			}
-			return this;
 		},
 
 		/*
@@ -394,7 +390,7 @@
 				Object
 		*/
 		parent:function(){
-			return this[0].parentNode;
+			return $(this[0].parentNode);
 		},
 
 		/*
@@ -404,7 +400,7 @@
 				Object
 		*/
 		previous:function(){
-			return this[0].previousSibling;
+			return $(this[0].previousSibling);
 		},
 
 		/*
@@ -416,7 +412,7 @@
 		next:function(){
 			var next=this[0].nextSibling;
 			if(next){
-				return next;
+				return $(next);
 			}
 			else{
 				return null;
