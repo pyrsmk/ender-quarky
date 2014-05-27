@@ -9,11 +9,13 @@
 
 	var html=document.documentElement,
 		body=document.body,
-		scrollElement=function(){
-			body.scrollTop=1;
-			var el=(body.scrollTop==1?body:html);
-			body.scrollTop=0;
-			return el;
+		s,scrollElement=function(){
+			if(!s){
+				body.scrollTop+=1;
+				s=body.scrollTop?body:html;
+				body.scrollTop-=1;
+			}
+			return s;
 		};
 
 	/*
@@ -518,7 +520,7 @@
 				Number
 		*/
 		top:function(){
-			return this[0].getBoundingClientRect().top+$('body')[0].scrollTop;
+			return this[0].getBoundingClientRect().top+scrollElement().scrollTop;
 		},
 
 		/*
@@ -528,7 +530,7 @@
 				Number
 		*/
 		left:function(){
-			return this[0].getBoundingClientRect().left+$('body')[0].scrollLeft;
+			return this[0].getBoundingClientRect().left+scrollElement().scrollLeft;
 		},
 
 		/*
