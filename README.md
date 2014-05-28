@@ -1,4 +1,4 @@
-Quarky 0.3.7
+Quarky 0.4.0
 ============
 
 Quarky is a DOM utility designed to work with [ender](http://ender.jit.su). It aims to be small and only handle common node tasks.

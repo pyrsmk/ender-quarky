@@ -307,72 +307,74 @@
 		},
 
 		/*
-			Append html contents
+			Append a node
 
 			Parameters
-				Object, String node
+				Object nodes
 
 			Return
 				Object
 		*/
-		append:function(node){
-			if(typeof node=='string'){
-				node=$(node);
-			}
-			this[0].appendChild(node[0]);
+		append:function(nodes){
+			var o=this[0];
+			toEnder(nodes).forEach(function(el){
+				o.appendChild(el);
+			});
 			return this;
 		},
 
 		/*
-			Prepend html contents
+			Prepend a node
 
 			Parameters
-				Object, String node
+				Object nodes
 
 			Return
 				Object
 		*/
-		prepend:function(node){
-			if(typeof node=='string'){
-				node=$(node);
-			}
-			this[0].insertBefore(node[0],this.children()[0]);
+		prepend:function(nodes){
+			var o=this[0],
+				o2=this.children()[0];
+			toEnder(nodes).forEach(function(el){
+				o.insertBefore(el,o2);
+			});
 			return this;
 		},
 
 		/*
-			Add html contents before the current node
+			Add a node before the current node
 
 			Parameters
-				Object, String node
+				Object nodes
 
 			Return
 				Object
 		*/
-		before:function(node){
-			if(typeof node=='string'){
-				node=$(node);
-			}
-			this.parent().insertBefore(node[0],this[0]);
+		before:function(nodes){
+			var o=this.parent()[0],
+				o2=this[0];
+			toEnder(nodes).forEach(function(el){
+				o.insertBefore(el,o2);
+			});
 			return this;
 		},
 
 		/*
-			Add html contents after the current node
+			Add a node after the current node
 
 			Parameters
-				Object, String node
+				Object nodes
 
 			Return
 				Object
 		*/
-		after:function(node){
+		after:function(nodes){
 			var next=this.next();
-			if(next){
-				return next.before(node);
+			if(next.length){
+				return next.before(nodes);
 			}
 			else{
-				return this.parent().append(node);
+				return this.parent().append(nodes);
 			}
 		},
 
@@ -380,9 +382,9 @@
 			Remove the current node
 		*/
 		remove:function(){
-			for(var i=0,j=this.length;i<j;++i){
-				$(this[i]).parent()[0].removeChild(this[i]);
-			}
+			this.forEach(function(el){
+				el.parentNode.removeChild(el);
+			});
 		},
 
 		/*
@@ -392,7 +394,11 @@
 				Object
 		*/
 		parent:function(){
-			return $(this[0].parentNode);
+			var els=[];
+			this.forEach(function(el){
+				els.push(el.parentNode);
+			});
+			return $(els);
 		},
 
 		/*
@@ -402,7 +408,11 @@
 				Object
 		*/
 		previous:function(){
-			return $(this[0].previousSibling);
+			var els=[];
+			this.forEach(function(el){
+				els.push(el.previousSibling);
+			});
+			return $(els);
 		},
 
 		/*
@@ -412,13 +422,14 @@
 				Object
 		*/
 		next:function(){
-			var next=this[0].nextSibling;
-			if(next){
-				return $(next);
-			}
-			else{
-				return null;
-			}
+			var els=[];
+			this.forEach(function(el){
+				var next=el.nextSibling;
+				if(next){
+					els.push(next);
+				}
+			});
+			return $(els);
 		},
 
 		/*
@@ -441,9 +452,9 @@
 				Object
 		*/
 		addClass:function(cls){
-			for(var i=0,j=this.length;i<j;++i){
-				this[i].className+=' '+cls;
-			}
+			this.forEach(function(el){
+				el.className+=' '+cls;
+			});
 			return this;
 		},
 
@@ -457,9 +468,10 @@
 				Object
 		*/
 		removeClass:function(cls){
-			for(var i=0,j=this.length;i<j;++i){
-				this[i].className=this[i].className.replace(new RegExp('\\b ?'+cls+'\\b'),'');
-			}
+			var re=new RegExp('\\b'+cls+'\\b');
+			this.forEach(function(el){
+				el.className=el.className.replace(re,'');
+			});
 			return this;
 		},
 
@@ -540,7 +552,11 @@
 				Node
 		*/
 		clone:function(){
-			return $(this[0].cloneNode(true));
+			var els=[];
+			this.forEach(function(el){
+				els.push(el.cloneNode(true));
+			});
+			return $(els);
 		},
 
 		/*
@@ -567,14 +583,14 @@
 			}(this,func);
 			// Plug each event
 			for(var i=0,j=event.length;i<j;++i){
-				for(var k=0,l=this.length;k<l;++k){
-					if(this[k].addEventListener){
-						this[k].addEventListener(event[i],func,false);
+				this.forEach(function(el){
+					if(el.addEventListener){
+						el.addEventListener(event[i],func,false);
 					}
 					else{
-						this[k].attachEvent('on'+event[i],func);
+						el.attachEvent('on'+event[i],func);
 					}
-				}
+				});
 			}
 			return this;
 		},
