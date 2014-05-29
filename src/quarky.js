@@ -16,6 +16,26 @@
 				body.scrollTop-=1;
 			}
 			return s;
+		},
+		toEnder=function(nodes){
+			if(nodes.length===undefined){
+				nodes=$(nodes);
+			}
+			return nodes;
+		},
+		verify=function(nodes){
+			var type;
+			switch(nodes){
+				case undefined:
+					type='undefined';
+					break;
+				case null:
+					type='undefined';
+					break;
+			}
+			if(type){
+				throw 'The parameter is '+type;
+			}
 		};
 
 	/*
