@@ -96,7 +96,7 @@
 				String, undefined value
 
 			Return
-				String, Object
+				String, Object, null
 		*/
 		css:function(name,value){
 			var // Translate CSS name to JS syntax
@@ -131,7 +131,7 @@
 							catch(e){return el.style.opacity;}
 						}
 					}
-					return el.style[name];
+					return el.style[name] || null;
 				};
 			if(typeof name=='string'){
 				// Get a CSS property
@@ -673,6 +673,25 @@
 					return this[0].scrollLeft;
 				}
 			}
+		},
+
+		/*
+			Get computed style
+
+			Parameters
+				String name
+
+			Return
+				String, null
+		*/
+		getComputedStyle: function(name){
+			if(this[0].currentStyle){
+				return this[0].currentStyle(name.replace(/-([a-z])/g,function(s,p1){return p1.toUpperCase();}));
+			}
+			if(window.getComputedStyle){
+				return window.getComputedStyle(this[0]).getPropertyValue(name);
+			}
+			return null;
 		}
 
 	},true);

@@ -1,4 +1,4 @@
-Quarky 0.4.1
+Quarky 0.4.2
 ============
 
 Quarky is a DOM utility designed to work with [ender](http://ender.jit.su). It aims to be small and only handle common node tasks.
@@ -12,6 +12,7 @@ Here's the complete API:
 - css(name) : get a CSS property
 - css(name,value) : set a CSS property
 - css(object) : set a CSS property list
+- getComputedStyle(name) : returns the computed style of one node, the name must be hyphenated (CSS syntax)
 - html() : get HTML contents
 - html(string) : set HTML contents
 - text() : get text contents
