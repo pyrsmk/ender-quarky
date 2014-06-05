@@ -40,7 +40,9 @@ Here's the complete API:
 - width() : get the width
 - height() : get the height
 - top() : get the top offset
+- bottom() : get the bottom offset
 - left() : get the left offset
+- right() : get the right offset
 - scrollTop() : get the scrollTop property
 - scrollTop(value) : set the scrollTop property
 - scrollLeft() : get the scrollLeft property

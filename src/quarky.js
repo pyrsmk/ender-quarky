@@ -120,6 +120,7 @@
 							els[i].style[name]=value;
 						}
 					}
+					return els;
 				},
 				// Get a CSS property
 				getStyle=function(el,name){
@@ -556,6 +557,16 @@
 		},
 
 		/*
+			Return bottom offset
+
+			Return
+				Number
+		*/
+		bottom:function(){
+			return this[0].getBoundingClientRect().bottom+scrollElement().scrollTop;
+		},
+
+		/*
 			Return left offset
 
 			Return
@@ -563,6 +574,16 @@
 		*/
 		left:function(){
 			return this[0].getBoundingClientRect().left+scrollElement().scrollLeft;
+		},
+
+		/*
+			Return right offset
+
+			Return
+				Number
+		*/
+		right:function(){
+			return this[0].getBoundingClientRect().right+scrollElement().scrollLeft;
 		},
 
 		/*
