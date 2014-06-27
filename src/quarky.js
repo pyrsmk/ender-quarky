@@ -429,9 +429,17 @@
 				Object
 		*/
 		previous:function(){
-			var els=[];
+			var els=[],
+				prev;
 			this.forEach(function(el){
-				els.push(el.previousSibling);
+				prev=el;
+				do{
+					prev=prev.previousSibling;
+				}
+				while(prev && prev.nodeType!=1);
+				if(prev){
+					els.push(prev);
+				}
 			});
 			return $(els);
 		},
@@ -443,9 +451,14 @@
 				Object
 		*/
 		next:function(){
-			var els=[];
+			var els=[],
+				next;
 			this.forEach(function(el){
-				var next=el.nextSibling;
+				next=el;
+				do{
+					next=next.nextSibling;
+				}
+				while(next && next.nodeType!=1);
 				if(next){
 					els.push(next);
 				}
@@ -612,17 +625,6 @@
 		*/
 		on:function(event,func){
 			event=event.split(' ');
-			// Wrap callback
-			func=function(node,func){
-				return function(e){
-					var propagate=!!func.apply(node,[e]);
-					if(!propagate && e.preventDefault!==undefined){
-						e.preventDefault();
-					}
-					return propagate;
-				};
-			}(this,func);
-			// Plug each event
 			for(var i=0,j=event.length;i<j;++i){
 				this.forEach(function(el){
 					if(el.addEventListener){
