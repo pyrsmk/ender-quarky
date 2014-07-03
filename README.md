@@ -1,4 +1,4 @@
-Quarky 0.4.4
+Quarky 0.4.5
 ============
 
 Quarky is a DOM utility designed to work with [ender](http://ender.jit.su). It aims to be small and only handle common node tasks.
@@ -33,16 +33,22 @@ Here's the complete API:
 - parent() : get the parent node
 - previous() : get the previous node
 - next() : get the next node
-- children() : get node's children (return a node list via `$$`)
+- children() : get node's children
 - addClass(string) : add a class
 - removeClass(string) : remove a class
 - hasClass(string) : verify if the class exist for that node
 - width() : get the width
+- width(value) : set the width (shortcut to `css('width',value)`)
 - height() : get the height
+- height(value) : set the height (shortcut to `css('height',value)`)
 - top() : get the top offset
+- top(value) : set the top offset (shortcut to `css('top',value)`)
 - bottom() : get the bottom offset
+- bottom(value) : set the bottom offset (shortcut to `css('bottom',value)`)
 - left() : get the left offset
+- left(value) : set the left offset (shortcut to `css('left',value)`)
 - right() : get the right offset
+- right(value) : set the right offset (shortcut to `css('right',value)`)
 - scrollTop() : get the scrollTop property
 - scrollTop(value) : set the scrollTop property
 - scrollLeft() : get the scrollLeft property

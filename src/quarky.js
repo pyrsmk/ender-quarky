@@ -524,79 +524,127 @@
 		},
 
 		/*
-			Return width
+			Set/get width
+
+			Parameters
+				Number value
 
 			Return
 				Number
 		*/
-		width:function(){
-			if(this[0]===window){
-				return html.clientWidth;
-			}
-			else if(this[0]===document || this[0]===html || this[0]===body){
-				return Math.max(body.scrollWidth,body.offsetWidth,html.clientWidth,html.scrollWidth,html.offsetWidth);
+		width:function(value){
+			if(value===undefined){
+				if(this[0]===window){
+					return html.clientWidth;
+				}
+				else if(this[0]===document || this[0]===html || this[0]===body){
+					return Math.max(body.scrollWidth,body.offsetWidth,html.clientWidth,html.scrollWidth,html.offsetWidth);
+				}
+				else{
+					return this[0].offsetWidth;
+				}
 			}
 			else{
-				return this[0].offsetWidth;
+				this.css('width',value);
 			}
 		},
 
 		/*
-			Return height
+			Set/get height
+
+			Parameters
+				Number value
 
 			Return
 				Number
 		*/
-		height:function(){
-			if(this[0]===window){
-				return html.clientHeight;
-			}
-			else if(this[0]===document || this[0]===html || this[0]===body){
-				return Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight);
+		height:function(value){
+			if(value===undefined){
+				if(this[0]===window){
+					return html.clientHeight;
+				}
+				else if(this[0]===document || this[0]===html || this[0]===body){
+					return Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight);
+				}
+				else{
+					return this[0].offsetHeight;
+				}
 			}
 			else{
-				return this[0].offsetHeight;
+				this.css('height',value);
 			}
 		},
 
 		/*
-			Return top offset
+			Set/get top offset
+
+			Parameters
+				Number value
 
 			Return
 				Number
 		*/
 		top:function(){
-			return this[0].getBoundingClientRect().top+scrollElement().scrollTop;
+			if(value===undefined){
+				return this[0].getBoundingClientRect().top+scrollElement().scrollTop;
+			}
+			else{
+				this.css('top',value);
+			}
 		},
 
 		/*
-			Return bottom offset
+			Set/get bottom offset
+
+			Parameters
+				Number value
 
 			Return
 				Number
 		*/
 		bottom:function(){
-			return this[0].getBoundingClientRect().bottom+scrollElement().scrollTop;
+			if(value===undefined){
+				return this[0].getBoundingClientRect().bottom+scrollElement().scrollTop;
+			}
+			else{
+				this.css('bottom',value);
+			}
 		},
 
 		/*
-			Return left offset
+			Set/get left offset
+
+			Parameters
+				Number value
 
 			Return
 				Number
 		*/
 		left:function(){
-			return this[0].getBoundingClientRect().left+scrollElement().scrollLeft;
+			if(value===undefined){
+				return this[0].getBoundingClientRect().left+scrollElement().scrollLeft;
+			}
+			else{
+				this.css('left',value);
+			}
 		},
 
 		/*
-			Return right offset
+			Set/get right offset
+
+			Parameters
+				Number value
 
 			Return
 				Number
 		*/
 		right:function(){
-			return this[0].getBoundingClientRect().right+scrollElement().scrollLeft;
+			if(value===undefined){
+				return this[0].getBoundingClientRect().right+scrollElement().scrollLeft;
+			}
+			else{
+				this.css('right',value);
+			}
 		},
 
 		/*
