@@ -584,7 +584,7 @@
 			Return
 				Number
 		*/
-		top:function(){
+		top:function(value){
 			if(value===undefined){
 				return this[0].getBoundingClientRect().top+scrollElement().scrollTop;
 			}
@@ -602,7 +602,7 @@
 			Return
 				Number
 		*/
-		bottom:function(){
+		bottom:function(value){
 			if(value===undefined){
 				return this[0].getBoundingClientRect().bottom+scrollElement().scrollTop;
 			}
@@ -620,7 +620,7 @@
 			Return
 				Number
 		*/
-		left:function(){
+		left:function(value){
 			if(value===undefined){
 				return this[0].getBoundingClientRect().left+scrollElement().scrollLeft;
 			}
@@ -638,7 +638,7 @@
 			Return
 				Number
 		*/
-		right:function(){
+		right:function(value){
 			if(value===undefined){
 				return this[0].getBoundingClientRect().right+scrollElement().scrollLeft;
 			}
