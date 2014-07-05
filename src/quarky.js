@@ -7,8 +7,7 @@
 
 (function(){
 
-	var html=document.documentElement,
-		body=document.body,
+	var html,body,
 		s,scrollElement=function(){
 			if(!s){
 				body.scrollTop+=1;
@@ -37,6 +36,11 @@
 				throw 'The parameter is '+type;
 			}
 		};
+
+	$(document).ready(function(){
+		html=document.documentElement;
+		body=document.body;
+	});
 
 	/*
 		Create a node from HTML code
