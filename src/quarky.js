@@ -222,7 +222,7 @@
 		},
 
 		/*
-			Return a an attribute or set one
+			Return an attribute, set a list of attributes, set just one or remove one
 
 			Parameters
 				String, Object name
@@ -237,6 +237,13 @@
 				// Get an attribute
 				if(value===undefined){
 					return this[0].getAttribute(name);
+				}
+				// Remove an attribute
+				else if(value===null){
+					for(i=0,j=this.length;i<j;++i){
+						this[i].removeAttribute(name);
+					}
+					return this;
 				}
 				// Set an attribute
 				else{
