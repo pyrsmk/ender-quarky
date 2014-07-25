@@ -1,7 +1,7 @@
-Quarky 0.4.9
-============
+Quarky 0.4.10
+=============
 
-Quarky is a DOM utility designed to work with [ender](http://ender.jit.su). It aims to be small and only handle common node tasks.
+Quarky is a DOM utility designed to work with [ender](http://ender.jit.su). It aims to be small and only handles common tasks.
 
 ```javascript
 $('#foo').html("<p>I'm a new paragraph!</p>").css('color','red').addClass('bar');

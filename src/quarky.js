@@ -556,7 +556,7 @@
 				}
 			}
 			else{
-				this.css('width',value);
+				this.css('width',value+'px');
 			}
 		},
 
@@ -582,7 +582,7 @@
 				}
 			}
 			else{
-				this.css('height',value);
+				this.css('height',value+'px');
 			}
 		},
 
@@ -600,7 +600,7 @@
 				return this[0].getBoundingClientRect().top+scrollElement().scrollTop;
 			}
 			else{
-				this.css('top',value);
+				this.css('top',value+'px');
 			}
 		},
 
@@ -618,7 +618,7 @@
 				return this[0].getBoundingClientRect().bottom+scrollElement().scrollTop;
 			}
 			else{
-				this.css('bottom',value);
+				this.css('bottom',value+'px');
 			}
 		},
 
@@ -636,7 +636,7 @@
 				return this[0].getBoundingClientRect().left+scrollElement().scrollLeft;
 			}
 			else{
-				this.css('left',value);
+				this.css('left',value+'px');
 			}
 		},
 
@@ -654,7 +654,7 @@
 				return this[0].getBoundingClientRect().right+scrollElement().scrollLeft;
 			}
 			else{
-				this.css('right',value);
+				this.css('right',value+'px');
 			}
 		},
 
