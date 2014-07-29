@@ -597,7 +597,7 @@
 		*/
 		top:function(value){
 			if(value===undefined){
-				return this[0].getBoundingClientRect().top+scrollElement().scrollTop;
+				return this[0].getBoundingClientRect().top;
 			}
 			else{
 				this.css('top',value+'px');
@@ -615,7 +615,7 @@
 		*/
 		bottom:function(value){
 			if(value===undefined){
-				return this[0].getBoundingClientRect().bottom+scrollElement().scrollTop;
+				return this[0].getBoundingClientRect().bottom;
 			}
 			else{
 				this.css('bottom',value+'px');
@@ -633,7 +633,7 @@
 		*/
 		left:function(value){
 			if(value===undefined){
-				return this[0].getBoundingClientRect().left+scrollElement().scrollLeft;
+				return this[0].getBoundingClientRect().left;
 			}
 			else{
 				this.css('left',value+'px');
@@ -651,7 +651,7 @@
 		*/
 		right:function(value){
 			if(value===undefined){
-				return this[0].getBoundingClientRect().right+scrollElement().scrollLeft;
+				return this[0].getBoundingClientRect().right;
 			}
 			else{
 				this.css('right',value+'px');
