@@ -597,7 +597,11 @@
 		*/
 		top:function(value){
 			if(value===undefined){
-				return this[0].getBoundingClientRect().top;
+				var top=this.css('top');
+				if(top){
+					return top.replace(/[a-z]+/i,'');
+				}
+				return top;
 			}
 			else{
 				this.css('top',value+'px');
@@ -615,7 +619,11 @@
 		*/
 		bottom:function(value){
 			if(value===undefined){
-				return this[0].getBoundingClientRect().bottom;
+				var bottom=this.css('bottom');
+				if(bottom){
+					return bottom.replace(/[a-z]+/i,'');
+				}
+				return bottom;
 			}
 			else{
 				this.css('bottom',value+'px');
@@ -633,7 +641,11 @@
 		*/
 		left:function(value){
 			if(value===undefined){
-				return this[0].getBoundingClientRect().left;
+				var left=this.css('left');
+				if(left){
+					return left.replace(/[a-z]+/i,'');
+				}
+				return left;
 			}
 			else{
 				this.css('left',value+'px');
@@ -651,7 +663,11 @@
 		*/
 		right:function(value){
 			if(value===undefined){
-				return this[0].getBoundingClientRect().right;
+				var right=this.css('right');
+				if(right){
+					return right.replace(/[a-z]+/i,'');
+				}
+				return right;
 			}
 			else{
 				this.css('right',value+'px');
