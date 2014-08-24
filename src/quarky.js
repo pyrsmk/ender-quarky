@@ -599,7 +599,7 @@
 			if(value===undefined){
 				var top=this.css('top');
 				if(top){
-					return top.replace(/[a-z]+/i,'');
+					return parseInt(top.replace(/[a-z]+/i,''),10);
 				}
 				return top;
 			}
@@ -621,7 +621,7 @@
 			if(value===undefined){
 				var bottom=this.css('bottom');
 				if(bottom){
-					return bottom.replace(/[a-z]+/i,'');
+					return parseInt(bottom.replace(/[a-z]+/i,''),10);
 				}
 				return bottom;
 			}
@@ -643,7 +643,7 @@
 			if(value===undefined){
 				var left=this.css('left');
 				if(left){
-					return left.replace(/[a-z]+/i,'');
+					return parseInt(left.replace(/[a-z]+/i,''),10);
 				}
 				return left;
 			}
@@ -665,7 +665,7 @@
 			if(value===undefined){
 				var right=this.css('right');
 				if(right){
-					return right.replace(/[a-z]+/i,'');
+					return parseInt(right.replace(/[a-z]+/i,''),10);
 				}
 				return right;
 			}
