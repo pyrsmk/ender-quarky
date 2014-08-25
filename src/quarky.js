@@ -778,18 +778,23 @@
 
 			Parameters
 				String name
+				Boolean clean
 
 			Return
-				String, null
+				String, Number, null
 		*/
-		getComputedStyle: function(name){
+		getComputedStyle: function(name,clean){
+			var value=null;
 			if(this[0].currentStyle){
-				return this[0].currentStyle(name.replace(/-([a-z])/g,function(s,p1){return p1.toUpperCase();}));
+				value=this[0].currentStyle(name.replace(/-([a-z])/g,function(s,p1){return p1.toUpperCase();}));
 			}
 			if(window.getComputedStyle){
-				return window.getComputedStyle(this[0]).getPropertyValue(name);
+				value=window.getComputedStyle(this[0]).getPropertyValue(name);
 			}
-			return null;
+			if(clean){
+				value=parseInt(value.replace(/[a-z]+$/,''),10);
+			}
+			return value;
 		}
 
 	},true);
