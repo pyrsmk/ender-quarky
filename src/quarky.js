@@ -786,7 +786,7 @@
 		getComputedStyle: function(name,clean){
 			var value=null;
 			if(this[0].currentStyle){
-				value=this[0].currentStyle(name.replace(/-([a-z])/g,function(s,p1){return p1.toUpperCase();}));
+				value=this[0].currentStyle(name);
 			}
 			if(window.getComputedStyle){
 				value=window.getComputedStyle(this[0]).getPropertyValue(name);
