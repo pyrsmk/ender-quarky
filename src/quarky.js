@@ -557,6 +557,7 @@
 			}
 			else{
 				this.css('width',value+'px');
+				return this;
 			}
 		},
 
@@ -583,6 +584,7 @@
 			}
 			else{
 				this.css('height',value+'px');
+				return this;
 			}
 		},
 
@@ -605,6 +607,7 @@
 			}
 			else{
 				this.css('top',value+'px');
+				return this;
 			}
 		},
 
@@ -627,6 +630,7 @@
 			}
 			else{
 				this.css('bottom',value+'px');
+				return this;
 			}
 		},
 
@@ -649,6 +653,7 @@
 			}
 			else{
 				this.css('left',value+'px');
+				return this;
 			}
 		},
 
@@ -671,6 +676,7 @@
 			}
 			else{
 				this.css('right',value+'px');
+				return this;
 			}
 		},
 
