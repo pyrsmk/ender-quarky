@@ -798,7 +798,7 @@
 				value=window.getComputedStyle(this[0]).getPropertyValue(name);
 			}
 			if(clean){
-				value=parseInt(value.replace(/[a-z]+$/,''),10);
+				value=parseFloat(value.replace(/[a-z]+$/,''));
 			}
 			return value;
 		}
