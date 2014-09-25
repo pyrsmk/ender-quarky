@@ -17,7 +17,7 @@
 			return s;
 		},
 		toEnder=function(nodes){
-			if(nodes.length===undefined){
+			if(nodes.$===undefined){
 				nodes=$(nodes);
 			}
 			return nodes;
