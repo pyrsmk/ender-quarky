@@ -1,9 +1,4 @@
-/*
-	quarky, a tiny DOM utility
-
-	Author
-		Aurélien Delogu (dev@dreamysource.fr)
-*/
+/* quarky 0.4.19 (https://github.com/pyrsmk/ender-quarky) */
 
 (function(){
 
