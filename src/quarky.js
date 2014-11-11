@@ -1,4 +1,4 @@
-/* quarky 0.4.19 (https://github.com/pyrsmk/ender-quarky) */
+/*! quarky 0.4.19 (https://github.com/pyrsmk/ender-quarky) */
 
 (function(){
 
