@@ -1,4 +1,4 @@
-/*! quarky 0.4.19 (https://github.com/pyrsmk/ender-quarky) */
+/*! quarky 0.4.20 (https://github.com/pyrsmk/ender-quarky) */
 
 (function(){
 
@@ -112,7 +112,7 @@
 							try{els[i].filters['DXImageTransform.Microsoft.Alpha'].opacity=value*100;}
 							catch(e){
 								try{els[i].filters('alpha').opacity=value*100;}
-								catch(e){els[i].style.opacity=value;}
+								catch(a){els[i].style.opacity=value;}
 							}
 						}
 						else{
@@ -128,7 +128,7 @@
 						try{return el.filters['DXImageTransform.Microsoft.Alpha'].opacity/100;}
 						catch(e){
 							try{return el.filters('alpha').opacity/100;}
-							catch(e){return el.style.opacity;}
+							catch(a){return el.style.opacity;}
 						}
 					}
 					return el.style[name] || null;
@@ -273,9 +273,8 @@
 			var i;
 			// Get the data list
 			if(name===undefined){
-				var values={},
-					attributes=this[0].attributes,
-					i,j;
+				var values={},j,
+					attributes=this[0].attributes;
 				for(i=0,j=attributes.length;i<j;++i){
 					if(/^data-/i.test(attributes[i].name)){
 						values[attributes[i].name.substring(5)]=attributes[i].value;
@@ -594,7 +593,7 @@
 		*/
 		top:function(value){
 			if(value===undefined){
-				var top=this.css('top');
+				var top=this[0].offsetTop;
 				if(top){
 					return parseInt(top.replace(/[a-z]+/i,''),10);
 				}
@@ -640,7 +639,7 @@
 		*/
 		left:function(value){
 			if(value===undefined){
-				var left=this.css('left');
+				var left=this[0].offsetLeft;
 				if(left){
 					return parseInt(left.replace(/[a-z]+/i,''),10);
 				}
