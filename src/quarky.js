@@ -1,4 +1,4 @@
-/*! quarky 0.4.23 (https://github.com/pyrsmk/ender-quarky) */
+/*! quarky 0.4.24 (https://github.com/pyrsmk/ender-quarky) */
 
 var html,body,
 	s,scrollElement=function(){
@@ -505,7 +505,7 @@ $.ender({
 			Object
 	*/
 	removeClass:function(cls){
-		var re=new RegExp('(^|\s)'+cls+'($|\s)');
+		var re=new RegExp('(^|\\s)'+cls+'($|\\s)');
 		this.forEach(function(el){
 			el.className=el.className.replace(re,' ');
 		});
@@ -522,7 +522,7 @@ $.ender({
 			Boolean
 	*/
 	hasClass:function(cls){
-		var re=new RegExp('(^|\s)'+cls+'($|\s)');
+		var re=new RegExp('(^|\\s)'+cls+'($|\\s)');
 		return re.test(this[0].className);
 	},
 
