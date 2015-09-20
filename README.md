@@ -1,7 +1,7 @@
-Quarky 0.4.24
-=============
+Ender-Quarky 0.4.25
+===================
 
-Quarky is a DOM utility designed to work with [ender](http://ender.jit.su). It aims to be small and only handles common tasks.
+Ender-Quarky is a DOM utility designed to work with [ender](http://ender.jit.su). It aims to be small and only handles common tasks.
 
 ```javascript
 $('#foo').html("<p>I'm a new paragraph!</p>").css('color','red').addClass('bar');
@@ -59,4 +59,4 @@ Here's the complete API:
 License
 -------
 
-Quarky is published under the [MIT license](http://dreamysource.mit-license.org).
+Ender-Quarky is published under the [MIT license](http://dreamysource.mit-license.org).
