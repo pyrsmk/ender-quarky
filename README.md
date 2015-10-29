@@ -1,6 +1,8 @@
 Ender-Quarky 0.4.25
 ===================
 
+__Ender-Quarky is not maintained anymore in favor of [quarky](https://github.com/pyrsmk/quarky) for [quark](https://github.com/pyrsmk/quark)__
+
 Ender-Quarky is a DOM utility designed to work with [ender](http://ender.jit.su). It aims to be small and only handles common tasks.
 
 ```javascript
